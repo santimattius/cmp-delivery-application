@@ -14,6 +14,11 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for
   your project.
 
+
+
+https://github.com/santimattius/cmp-delivery-application/assets/22333101/72d1f390-943e-4b31-9572-4e79822d19c1
+
+
 ## Prepare the environment
 
 - Install and configure the latest JDK 17+.
