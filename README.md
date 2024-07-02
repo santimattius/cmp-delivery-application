@@ -54,5 +54,13 @@ Otherwise, KDoctor will highlight which parts of your setup still need to be con
 suggest a way to fix
 them.
 
+## Setup
+
+Using local properties for define api key:
+
+```properties
+apiKey="{your-api-key}"
+```
+
 Learn more
 about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)
