@@ -3,16 +3,16 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-		It contains several subfolders:
-	- `commonMain` is for code that’s common for all targets.
-	- Other folders are for Kotlin code that will be compiled for only the platform indicated in the
-			folder name.
-			For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-			`iosMain` would be the right folder for such calls.
+  It contains several subfolders:
+    - `commonMain` is for code that’s common for all targets.
+    - Other folders are for Kotlin code that will be compiled for only the platform indicated in the
+      folder name.
+      For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
+      `iosMain` would be the right folder for such calls.
 
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-		you need this entry point for your iOS app. This is also where you should add SwiftUI code for
-		your project.
+  you need this entry point for your iOS app. This is also where you should add SwiftUI code for
+  your project.
 
 ## Prepare the environment
 
@@ -26,19 +26,19 @@ environment is configured correctly:
 
 1. Install KDoctor with [Homebrew](https://brew.sh/):
 
-			 ```text
+    ```text
     brew install kdoctor
     ```
 
 2. Run KDoctor in your terminal:
 
-			 ```text
+    ```text
     kdoctor
     ```
 
-			If everything is set up correctly, you'll see valid output:
+   If everything is set up correctly, you'll see valid output:
 
-			```text
+   ```text
    Environment diagnose (to see all details, use -v option):
    [✓] Operation System
    [✓] Java
@@ -53,14 +53,6 @@ environment is configured correctly:
 Otherwise, KDoctor will highlight which parts of your setup still need to be configured and will
 suggest a way to fix
 them.
-
-## Setup
-
-Using local properties for define api key:
-
-```properties
-apiKey="{your-api-key}"
-```
 
 Learn more
 about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)
