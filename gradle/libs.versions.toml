@@ -23,6 +23,8 @@ koinCompose = "1.1.5"
 kotlinxCoroutinesAndroid = "1.8.1"
 ktorVersion = "2.3.12"
 
+compottie="2.0.0-beta02"
+
 buildkonfigGradlePlugin = "0.15.1"
 
 [libraries]
@@ -51,6 +53,11 @@ ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorVer
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorVersion" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktorVersion" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
+
+compottie-core = { module = "io.github.alexzhirkevich:compottie", version.ref = "compottie" }
+compottie-dot = { module = "io.github.alexzhirkevich:compottie-dot", version.ref = "compottie" }
+compottie-network = { module = "io.github.alexzhirkevich:compottie-network", version.ref = "compottie" }
+compottie-resources = { module = "io.github.alexzhirkevich:compottie-resources", version.ref = "compottie" }
 
 buildkonfig-gradle-plugin = { module = "com.codingfeline.buildkonfig:buildkonfig-gradle-plugin", version.ref = "buildkonfigGradlePlugin" }
 
