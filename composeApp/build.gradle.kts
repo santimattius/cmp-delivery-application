@@ -1,17 +1,18 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec
-import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.internal.utils.getLocalProperty
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.skie)
     id("com.codingfeline.buildkonfig")
 }
 
 kotlin {
+    applyDefaultHierarchyTemplate()
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -48,49 +49,43 @@ kotlin {
 
             implementation(libs.koin.android)
         }
-        val commonMain by getting {
-            dependencies {
-                implementation(compose.runtime)
-                implementation(compose.foundation)
-                implementation(compose.material)
-                implementation(compose.material3)
-                implementation(compose.materialIconsExtended)
-                implementation(compose.ui)
-                implementation(compose.components.resources)
+        commonMain.dependencies {
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
+            implementation(compose.ui)
+            implementation(compose.components.resources)
 
-                implementation(libs.coil.compose)
-                implementation(libs.coil.network)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network)
 
-                implementation(libs.stately.common)
-                implementation(libs.voyager.navigator)
-                implementation(libs.voyager.koin)
+            implementation(libs.stately.common)
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.koin)
 
-                implementation(libs.ktor.client.core)
-                implementation(libs.ktor.client.content.negotiation)
-                implementation(libs.ktor.client.logging)
-                implementation(libs.ktor.serialization.kotlinx.json)
-                implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.kotlinx.coroutines.core)
 
-                api(libs.koin.core)
-                api(libs.koin.compose)
+            api(libs.koin.core)
+            api(libs.koin.compose)
 
-            }
         }
 
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        val iosSimulatorArm64Main by getting
-        val iosMain by creating {
-            dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            iosSimulatorArm64Main.dependsOn(this)
-            dependencies {
-                implementation(libs.ktor.client.darwin)
-            }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
+
+composeCompiler {
+    enableStrongSkippingMode = true
+}
+
 buildkonfig {
     packageName = "com.santimattius.kmp.entertainment"
     objectName = "BuildConfig"
