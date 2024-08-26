@@ -2,6 +2,7 @@ package com.santimattius.kmp.delivery.di
 
 import com.santimattius.kmp.delivery.core.data.VendorsRepository
 import com.santimattius.kmp.delivery.core.data.sources.VendorLocalDataSource
+import com.santimattius.kmp.delivery.core.data.sources.VendorMockRemoteDataSource
 import com.santimattius.kmp.delivery.core.data.sources.VendorRemoteDataSource
 import com.santimattius.kmp.delivery.core.data.sources.ktor.KtorVendorRemoteDataSource
 import com.santimattius.kmp.delivery.core.data.sources.local.InMemoryVendorLocalDataSource
@@ -29,8 +30,12 @@ val sharedModules = module {
             get(qualifier(AppQualifiers.Client))
         )
     }
+
+    single<VendorRemoteDataSource>(named(AppQualifiers.FileSource)) {
+        VendorMockRemoteDataSource()
+    }
     single<VendorLocalDataSource> { InMemoryVendorLocalDataSource() }
-    single { VendorsRepository(get(named(AppQualifiers.RemoteSource)), get()) }
+    single { VendorsRepository(get(named(AppQualifiers.FileSource)), get()) }
 }
 
 val homeModule = module {

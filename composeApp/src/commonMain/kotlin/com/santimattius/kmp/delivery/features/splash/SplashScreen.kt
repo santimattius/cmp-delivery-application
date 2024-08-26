@@ -34,7 +34,6 @@ object SplashScreen : Screen {
     }
 }
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun SplashScreenContent(navigate: () -> Unit) {
     val scale = remember {

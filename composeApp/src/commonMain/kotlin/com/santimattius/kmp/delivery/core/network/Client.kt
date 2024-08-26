@@ -15,12 +15,7 @@ import kotlinx.serialization.json.Json
 internal fun ktorHttpClient(baseUrl: String) = HttpClient {
 
     install(ContentNegotiation) {
-        json(Json {
-            prettyPrint = true
-            isLenient = true
-            ignoreUnknownKeys = true
-            allowStructuredMapKeys = true
-        })
+        json(json)
     }
     install(Logging) {
         logger = Logger.DEFAULT
@@ -31,4 +26,15 @@ internal fun ktorHttpClient(baseUrl: String) = HttpClient {
         url(baseUrl)
         contentType(ContentType.Application.Json)
     }
+}
+
+val json = Json {
+    prettyPrint = true
+    isLenient = true
+    ignoreUnknownKeys = true
+    allowStructuredMapKeys = true
+}
+
+inline fun <reified T : Any> decodeFromString(jsonStr: String): T {
+    return json.decodeFromString<T>(jsonStr)
 }

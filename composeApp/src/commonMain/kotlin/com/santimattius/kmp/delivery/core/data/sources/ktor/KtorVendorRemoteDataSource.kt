@@ -19,7 +19,7 @@ class KtorVendorRemoteDataSource(
                 append(AVOCODE, BuildConfig.apiKey)
             }
         }
-        val body = response.body<List<VendorDto>>()
+            val body = response.body<List<VendorDto>>()
         VendorResult(
             total = body.size.toLong(),
             vendors = body.asDomains()
