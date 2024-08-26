@@ -9,6 +9,7 @@ import kotlinx.coroutines.sync.withLock
 class InMemoryVendorLocalDataSource : VendorLocalDataSource {
     private val mutex = Mutex()
     private val vendors = mutableListOf<Vendor>()
+
     override suspend fun getVendors(): Result<VendorResult> {
         return mutex.withLock {
             Result.success(VendorResult(total = 0L, vendors = vendors))

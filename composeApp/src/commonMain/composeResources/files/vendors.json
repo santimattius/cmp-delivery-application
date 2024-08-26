@@ -1,0 +1,548 @@
+[
+  {
+    "id": 473067,
+    "name": "Domino's Pizza - Punta Carretas",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/logo-haprh3.jpg",
+    "location": {
+      "lat": -34.9195898,
+      "lng": -56.15259409999999
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "20-35 min",
+    "deliveryFee": 55,
+    "rating": 4.18,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/f915c6d9-6dbc-4d5d-9776-0523d5ef25af.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 53023,
+    "name": "McDonald's Boulevard Y Palmar",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/mcdonald-s-boulevard-y-palmar-logo.jpg",
+    "location": {
+      "lat": -34.9009782,
+      "lng": -56.16391030000001
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 49,
+    "rating": 3.58,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/mc-donalds-uruguay-header-custom-2020.jpg",
+    "categories": [
+      "Hamburguesas"
+    ]
+  },
+  {
+    "id": 29474,
+    "name": "Bar 18",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/bar-18-new.jpg",
+    "location": {
+      "lat": -34.89899826049805,
+      "lng": -56.16880035400391
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 29,
+    "rating": 4.08,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/bar-18-custom-header.jpg",
+    "categories": [
+      "Milanesas",
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 310729,
+    "name": "Mostaza - Tres Cruces",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/logo-mostaza-200x200px.jpg",
+    "location": {
+      "lat": -34.8944419,
+      "lng": -56.1665392
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 55,
+    "rating": 3.98,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/8c6a5319-6c80-4a5d-97c8-ed145b2c987a.jpg",
+    "categories": []
+  },
+  {
+    "id": 63445,
+    "name": "Sbarro Tres Cruces",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/4ovy4y.jpg",
+    "location": {
+      "lat": -34.89459991455078,
+      "lng": -56.16659927368164
+    },
+    "isNew": false,
+    "isExclusive": true,
+    "deliveryTime": "25-40 min",
+    "deliveryFee": 55,
+    "rating": 4.38,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/1ac3b4b0-3017-479b-a7e3-7ad115ba3ed8.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 193348,
+    "name": "El Club De La Papa Frita - 8 De Octubre",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/el-club-de-la-papafrita-logo.jpg",
+    "location": {
+      "lat": -34.8893961,
+      "lng": -56.1599718
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.41,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/el-club-de-la-papa-frita-uy-header-custom.jpg",
+    "categories": [
+      "Milanesas",
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 471060,
+    "name": "Domino's Pizza - Cordón",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/hak3m4.jpg",
+    "location": {
+      "lat": -34.9078751,
+      "lng": -56.1728506
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 39,
+    "rating": 4.06,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/1cd8396a-e7cc-4572-bcdf-c0f81592a531.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 32143,
+    "name": "La Fábrica - Cordón",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/la-fabrica-logo.jpg",
+    "location": {
+      "lat": -34.90090179,
+      "lng": -56.17819977
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 39,
+    "rating": 3.6,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/la-fabrica-cordon-portada.jpg",
+    "categories": [
+      "Milanesas"
+    ]
+  },
+  {
+    "id": 54008,
+    "name": "El Club De La Papa Frita - Parque Batlle",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/logo-el-club-de-la-papafrita.jpg",
+    "location": {
+      "lat": -34.90240097045898,
+      "lng": -56.16339874267578
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 29,
+    "rating": 4.1,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/el-club-de-la-papa-frita-uy-header-custom.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 304902,
+    "name": "Grido - Pocitos - 5274",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/grido-uru-logo.jpg",
+    "location": {
+      "lat": -34.90710067749023,
+      "lng": -56.16019821166992
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "5-20 min",
+    "deliveryFee": 39,
+    "rating": 4.42,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/hwh1ai.jpg",
+    "categories": [
+      "Helados"
+    ]
+  },
+  {
+    "id": 345446,
+    "name": "Kentucky - Pizza Argentina Parque Batlle",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/logo-kentucky-pizza.jpg",
+    "location": {
+      "lat": -34.89879989624023,
+      "lng": -56.16460037231445
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 29,
+    "rating": 3.81,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/whatsapp-image-2022-03-14-at-10-14-15-am.jpeg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 374594,
+    "name": "El Club De La Papa Frita - Cordón",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/logo-el-club-de-la-papafrita.jpg",
+    "location": {
+      "lat": -34.90231469999999,
+      "lng": -56.1632864
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 29,
+    "rating": 3.94,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/el-club-de-la-papa-frita-uy-header-custom.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 155584,
+    "name": "Bar Castrobó",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/bar-castrobo-logo1.jpg",
+    "location": {
+      "lat": -34.89920043945313,
+      "lng": -56.16880035400391
+    },
+    "isNew": false,
+    "isExclusive": true,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 29,
+    "rating": 4.7,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/4ov0s5-headers-custom.jpg",
+    "categories": [
+      "Milanesas"
+    ]
+  },
+  {
+    "id": 279402,
+    "name": "Lo De Pepe (comer A Lo Grande) - Tres Cruces",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/lo-de-pepe-shopping-xxx.png",
+    "location": {
+      "lat": -34.89459991455078,
+      "lng": -56.16659927368164
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 29,
+    "rating": 4.33,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/29c5824d-7203-49f1-a518-3bfeb1bb67fc.jpg",
+    "categories": [
+      "Milanesas",
+      "Chivitos"
+    ]
+  },
+  {
+    "id": 18199,
+    "name": "La Marañada",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/la-maranada-new.jpg",
+    "location": {
+      "lat": -34.90250015258789,
+      "lng": -56.16899871826172
+    },
+    "isNew": false,
+    "isExclusive": true,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 29,
+    "rating": 4.5,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/la-maranada-custom-header.png",
+    "categories": [
+      "Milanesas",
+      "Carnes"
+    ]
+  },
+  {
+    "id": 175086,
+    "name": "Ola Poke Mercado Ferrando",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/ola-poke-logo-001.png",
+    "location": {
+      "lat": -34.90470123291016,
+      "lng": -56.1702995300293
+    },
+    "isNew": false,
+    "isExclusive": true,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 29,
+    "rating": 4.16,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/hkf9r5.jpg",
+    "categories": [
+      "Poke"
+    ]
+  },
+  {
+    "id": 453486,
+    "name": "Viva La Mila - Pocitos",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/viva-la-mila-pocitos-bartolito-mitre-2848-57e7045b-8756-4f2e-ad43-c099321115e1.jpg",
+    "location": {
+      "lat": -34.9069448,
+      "lng": -56.15176285
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.3,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/35d8d762-1703-4553-962f-bba6bc4ba32e.jpg",
+    "categories": [
+      "Pizzas",
+      "Milanesas"
+    ]
+  },
+  {
+    "id": 477548,
+    "name": "Kamisushi Pocitos",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/kami-sushi-la-union-04afbd81-74d4-4bcf-99ba-04689e7f323d.jpg",
+    "location": {
+      "lat": -34.9029671,
+      "lng": -56.1516756
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "20-35 min",
+    "deliveryFee": 39,
+    "rating": 4.43,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/3f0c8bac-4f9b-4f89-98ef-e77605883dc1.jpg",
+    "categories": [
+      "Sushi"
+    ]
+  },
+  {
+    "id": 37498,
+    "name": "Despacho De Pizzetas",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/despacho-pizza-logo.jpg",
+    "location": {
+      "lat": -34.89910125732422,
+      "lng": -56.16889953613281
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 29,
+    "rating": 3.69,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/despacho-pizzetas-headers-custom.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 142385,
+    "name": "Hamburgueseria Magico",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/5c0d76a4-3dbe-4ae0-be00-307f57058783.jpg",
+    "location": {
+      "lat": -34.8927001953125,
+      "lng": -56.16650009155273
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 39,
+    "rating": 4.46,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/52393a64-e360-4107-8346-695a99a6d912.jpg",
+    "categories": [
+      "Hamburguesas"
+    ]
+  },
+  {
+    "id": 162812,
+    "name": "La Terna",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/whatsapp-image-2020-07-04-at-3-55-13-pm.jpg",
+    "location": {
+      "lat": -34.88999938964844,
+      "lng": -56.16669845581055
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.6,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/hkumdr-headers-custom.jpg",
+    "categories": [
+      "Pizzas",
+      "Carnes"
+    ]
+  },
+  {
+    "id": 119541,
+    "name": "Bar Micons",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/hkhcuy.jpg",
+    "location": {
+      "lat": -34.8924295,
+      "lng": -56.17538780000001
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.73,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/a8629ca1-3e1b-44c4-949d-d34763f7a81b.jpg",
+    "categories": [
+      "Milanesas"
+    ]
+  },
+  {
+    "id": 18298,
+    "name": "Bar Pizzería Luz",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/barluz-logo.jpg",
+    "location": {
+      "lat": -34.902099609375,
+      "lng": -56.1692008972168
+    },
+    "isNew": false,
+    "isExclusive": true,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 29,
+    "rating": 4.42,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/bar-pizzeria-luz-custom-header.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 7825,
+    "name": "Bar Rodó",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/bar-rodo-express.jpg",
+    "location": {
+      "lat": -34.91180038452148,
+      "lng": -56.17169952392578
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 39,
+    "rating": 4.66,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/7825.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 383705,
+    "name": "West",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/west.jpg",
+    "location": {
+      "lat": -34.9027373,
+      "lng": -56.1754981
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "25-40 min",
+    "deliveryFee": 39,
+    "rating": 4.51,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/custom-header-west.jpg",
+    "categories": [
+      "Hamburguesas"
+    ]
+  },
+  {
+    "id": 45786,
+    "name": "Palacio Pizza Café",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/palacio-cafe.jpg",
+    "location": {
+      "lat": -34.8908731,
+      "lng": -56.1562191
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.35,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/palacio-pizza-cafe-custom-header.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  },
+  {
+    "id": 221595,
+    "name": "Remix Salads",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/remix-salads.jpg",
+    "location": {
+      "lat": -34.9019856,
+      "lng": -56.17939209999999
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "20-35 min",
+    "deliveryFee": 39,
+    "rating": 4.19,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/221595.jpg",
+    "categories": [
+      "Ensaladas"
+    ]
+  },
+  {
+    "id": 179936,
+    "name": "Mundo Mila - Buceo",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/hk713t.jpg",
+    "location": {
+      "lat": -34.9031283,
+      "lng": -56.159353
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "20-35 min",
+    "deliveryFee": 29,
+    "rating": 4.07,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/profile-headers/3713cb09-73fa-4713-9d2e-a4ba68298604.jpg",
+    "categories": [
+      "Pizzas",
+      "Milanesas"
+    ]
+  },
+  {
+    "id": 29396,
+    "name": "Burgers Pocitos",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/burgersv2alogo.jpg",
+    "location": {
+      "lat": -34.90807459920502,
+      "lng": -56.17125549999999
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "15-30 min",
+    "deliveryFee": 39,
+    "rating": 4.47,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/foto-de-portada-del-perfil-portada.jpg",
+    "categories": [
+      "Comida Vegetariana",
+      "Hamburguesas"
+    ]
+  },
+  {
+    "id": 435160,
+    "name": "Soprano´s Pocitos",
+    "logo": "https://images.deliveryhero.io/image/pedidosya/restaurants/sopranos-pocitos-2780725e-e7f8-4803-92e8-835b3e4abee1.png",
+    "location": {
+      "lat": -34.91199238111003,
+      "lng": -56.16053905487436
+    },
+    "isNew": false,
+    "isExclusive": false,
+    "deliveryTime": "10-25 min",
+    "deliveryFee": 39,
+    "rating": 4.39,
+    "headerImage": "https://images.deliveryhero.io/image/pedidosya/profile-headers/a9d62a5b-d059-4f33-a9cf-f2def284fdf3.jpg",
+    "categories": [
+      "Pizzas"
+    ]
+  }
+]
