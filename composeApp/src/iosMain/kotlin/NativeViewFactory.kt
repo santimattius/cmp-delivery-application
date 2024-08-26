@@ -7,4 +7,6 @@ interface NativeViewFactory {
         vendors: List<Vendor>,
         onItemClick: (Vendor) -> Unit
     ): UIViewController
+
+    fun createVendorRow(vendor: Vendor): UIViewController
 }

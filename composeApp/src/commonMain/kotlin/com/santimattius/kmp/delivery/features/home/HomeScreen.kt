@@ -204,10 +204,11 @@ private fun VendorList(
             if (isGrid) {
                 VendorRowCard(vendor)
             } else {
-                VendorRowItem(
-                    vendor = vendor,
-                    onItemClick = onItemClick,
-                )
+//                VendorRowItem(
+//                    vendor = vendor,
+//                    onItemClick = onItemClick,
+//                )
+                NativeVendorItem(vendor)
             }
             if (index < vendors.lastIndex)
                 HorizontalDivider(
@@ -218,6 +219,9 @@ private fun VendorList(
         }
     }
 }
+
+@Composable
+expect fun NativeVendorItem(vendor: Vendor)
 
 
 @Composable
@@ -240,7 +244,7 @@ fun VendorRowCard(vendor: Vendor, modifier: Modifier = Modifier) {
 
 
 @Composable
-private fun VendorRowItem(
+internal fun VendorRowItem(
     vendor: Vendor,
     onItemClick: (Vendor) -> Unit = {},
 ) {
