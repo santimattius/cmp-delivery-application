@@ -48,23 +48,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.LightGray
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import coil3.compose.AsyncImage
-import coil3.compose.LocalPlatformContext
-import coil3.request.ImageRequest
 import com.santimattius.kmp.delivery.core.domain.Vendor
+import com.santimattius.kmp.delivery.core.ui.components.CircularAvatar
 import com.santimattius.kmp.delivery.core.ui.components.ErrorView
 import com.santimattius.kmp.delivery.core.ui.components.LoadingIndicator
 import com.santimattius.kmp.delivery.core.ui.components.NetworkImage
@@ -204,11 +199,10 @@ private fun VendorList(
             if (isGrid) {
                 VendorRowCard(vendor)
             } else {
-//                VendorRowItem(
-//                    vendor = vendor,
-//                    onItemClick = onItemClick,
-//                )
-                NativeVendorItem(vendor)
+                VendorRowItem(
+                    vendor = vendor,
+                    onItemClick = onItemClick,
+                )
             }
             if (index < vendors.lastIndex)
                 HorizontalDivider(
@@ -220,13 +214,14 @@ private fun VendorList(
     }
 }
 
-@Composable
-expect fun NativeVendorItem(vendor: Vendor)
+
 
 
 @Composable
 fun VendorRowCard(vendor: Vendor, modifier: Modifier = Modifier) {
-    Card {
+    Card(
+        modifier = modifier
+    ) {
         Column {
             NetworkImage(
                 imageUrl = vendor.headerImage,
@@ -299,25 +294,4 @@ internal fun VendorRowItem(
 }
 
 @Composable
-private fun CircularAvatar(
-    image: String,
-    contentDescription: String,
-    modifier: Modifier = Modifier,
-    size: Dp = 40.dp
-) {
-    Box(
-        modifier = modifier
-            .size(size)
-            .background(color = MaterialTheme.colorScheme.surface, shape = RectangleShape)
-            .clip(RectangleShape),
-        contentAlignment = Alignment.Center
-    ) {
-        AsyncImage(
-            model = ImageRequest.Builder(LocalPlatformContext.current)
-                .data(image).build(),
-            contentDescription = contentDescription,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.size(size),
-        )
-    }
-}
+expect fun NativeVendorItem(vendor: Vendor)
