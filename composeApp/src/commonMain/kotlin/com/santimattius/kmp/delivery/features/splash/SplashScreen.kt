@@ -3,7 +3,6 @@ package com.santimattius.kmp.delivery.features.splash
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -13,29 +12,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
-import cmp_delivery_application.composeapp.generated.resources.Res
-import cmp_delivery_application.composeapp.generated.resources.compose_multiplatform
 import com.santimattius.kmp.delivery.core.ui.components.LottieLoader
-import com.santimattius.kmp.delivery.features.home.HomeScreen
 import kotlinx.coroutines.delay
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.painterResource
-
-object SplashScreen : Screen {
-    @Composable
-    override fun Content() {
-        val navigator = LocalNavigator.currentOrThrow
-        SplashScreenContent {
-            navigator.replace(HomeScreen)
-        }
-    }
-}
 
 @Composable
-fun SplashScreenContent(navigate: () -> Unit) {
+fun SplashScreen(navigate: () -> Unit) {
     val scale = remember {
         Animatable(0f)
     }
