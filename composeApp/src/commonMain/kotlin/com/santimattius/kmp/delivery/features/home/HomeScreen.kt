@@ -1,13 +1,11 @@
 package com.santimattius.kmp.delivery.features.home
 
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -18,17 +16,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ViewList
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Map
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Card
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -38,65 +32,43 @@ import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.LightGray
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.koin.getScreenModel
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
-import coil3.compose.AsyncImage
-import coil3.compose.LocalPlatformContext
-import coil3.request.ImageRequest
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.santimattius.kmp.delivery.core.domain.Vendor
+import com.santimattius.kmp.delivery.core.ui.components.CircularAvatar
 import com.santimattius.kmp.delivery.core.ui.components.ErrorView
 import com.santimattius.kmp.delivery.core.ui.components.LoadingIndicator
 import com.santimattius.kmp.delivery.core.ui.components.NetworkImage
-import com.santimattius.kmp.delivery.features.map.MapScreen
+import com.santimattius.kmp.delivery.core.ui.components.SearchAppBar
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
-object HomeScreen : Screen {
-
-    @Composable
-    override fun Content() {
-        val screenModel = getScreenModel<HomeScreenModel>()
-        val navigator = LocalNavigator.currentOrThrow
-        HomeScreenContent(screenModel) {
-            navigator.push(MapScreen)
-        }
-    }
-}
-
+@OptIn(KoinExperimentalAPI::class)
 @Composable
-fun HomeScreenContent(
-    screenModel: HomeScreenModel,
+fun HomeScreen(
+    screenModel: HomeScreenViewModel = koinViewModel(),
     onOpenMap: () -> Unit = {},
 ) {
-    val state by screenModel.state.collectAsState()
 
-    Scaffold(
-        topBar = { SearchAppBar() },
-        floatingActionButton = {
-            FloatingActionButton(onClick = onOpenMap) {
-                Icon(Icons.Default.Map, contentDescription = null)
-            }
+    Scaffold(topBar = { SearchAppBar() }, floatingActionButton = {
+        FloatingActionButton(onClick = onOpenMap) {
+            Icon(Icons.Default.Map, contentDescription = null)
         }
-    ) {
+    }) {
+        val state by screenModel.state.collectAsStateWithLifecycle()
         Box(
             modifier = Modifier.fillMaxSize().padding(it),
             contentAlignment = Alignment.Center
@@ -105,7 +77,7 @@ fun HomeScreenContent(
                 state.isLoading -> LoadingIndicator()
 
                 state.hasError -> {
-                    ErrorView(message = "An error occurred while updating the image")
+                    ErrorView(message = "Something went wrong")
                 }
 
                 else -> {
@@ -116,121 +88,112 @@ fun HomeScreenContent(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun SearchAppBar(
-    text: String = "",
-    onValueChange: (String) -> Unit = {},
-    modifier: Modifier = Modifier,
-) {
-    Row(
-        modifier = Modifier.fillMaxWidth().padding(top = 16.dp, bottom = 16.dp),
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Icon(
-            modifier = Modifier.weight(0.5f),
-            imageVector = Icons.Default.Menu,
-            contentDescription = ""
-        )
-        TextField(
-            value = text,
-            onValueChange = {
-                onValueChange(it)
-            },
-            modifier = modifier.border(
-                BorderStroke(width = 1.dp, color = LightGray),
-                shape = RoundedCornerShape(20)
-            ),
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            ),
-            textStyle = MaterialTheme.typography.bodyMedium,
-            trailingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Search,
-                    contentDescription = ""
-                )
-            },
-            placeholder = {
-                Text(text = "Buscar locales y platos")
-            }
-        )
-        Icon(
-            modifier = Modifier.weight(0.5f),
-            imageVector = Icons.Default.ShoppingCart,
-            contentDescription = ""
-        )
-    }
-}
-
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun VendorList(
     total: Long,
     vendors: List<Vendor>,
     onItemClick: (Vendor) -> Unit = {},
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
-    var isGrid by remember { mutableStateOf(false) }
+    var isCard by remember { mutableStateOf(true) }
 
     LazyColumn(
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
         modifier = modifier
     ) {
-        item {
-            Row(
-                modifier = Modifier.background(MaterialTheme.colorScheme.background).fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "$total restaurantes",
-                    style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.weight(1f)
-                )
-                IconButton(onClick = {
-                    isGrid = !isGrid
-                }, modifier = Modifier.weight(0.1f)) {
-                    Icon(
-                        imageVector = if (!isGrid) Icons.Filled.GridView else Icons.AutoMirrored.Filled.ViewList,
-                        contentDescription = "",
-                    )
-                }
-            }
+        stickyHeader {
+            VendorHeader(
+                total = total,
+                isCard = isCard,
+                modifier = Modifier
+                    .background(MaterialTheme.colorScheme.background)
+                    .fillMaxWidth(),
+                onViewTypeClicked = { isCard = !isCard },
+            )
         }
         itemsIndexed(vendors, key = { _, item -> item.id }) { index, vendor ->
-            if (isGrid) {
-                VendorRowCard(vendor)
+            if (isCard) {
+                VendorRowCard(
+                    modifier = Modifier.padding(
+                        vertical = 4.dp,
+                        horizontal = 16.dp,
+                    ),
+                    elevation = 2.dp,
+                    vendor = vendor
+                )
             } else {
                 VendorRowItem(
                     vendor = vendor,
                     onItemClick = onItemClick,
                 )
+                if (index < vendors.lastIndex) {
+                    HorizontalDivider(
+                        color = LightGray,
+                        thickness = 1.dp,
+                        modifier = Modifier.padding(
+                            top = 8.dp, bottom = 8.dp, start = 16.dp
+                        )
+                    )
+                }
             }
-            if (index < vendors.lastIndex)
-                HorizontalDivider(
-                    color = LightGray,
-                    thickness = 1.dp,
-                    modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
-                )
         }
     }
 }
 
+@Composable
+private fun VendorHeader(
+    modifier: Modifier,
+    total: Long,
+    isCard: Boolean,
+    onViewTypeClicked: () -> Unit = {},
+) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "$total restaurantes",
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.weight(1f).padding(
+                start = 16.dp,
+            )
+        )
+        IconButton(
+            onClick = onViewTypeClicked,
+            modifier = Modifier
+                .weight(0.1f)
+                .padding(end = 16.dp)
+        ) {
+            Icon(
+                imageVector = if (!isCard) Icons.Filled.GridView else Icons.AutoMirrored.Filled.ViewList,
+                contentDescription = if (!isCard) "Change to Card" else "Change to Simple",
+            )
+        }
+    }
+}
 
 @Composable
-fun VendorRowCard(vendor: Vendor, modifier: Modifier = Modifier) {
-    Card {
+fun VendorRowCard(
+    vendor: Vendor,
+    modifier: Modifier = Modifier,
+    elevation: Dp = 0.dp,
+) {
+    Card(
+        modifier = modifier,
+        elevation = CardDefaults.elevatedCardElevation(defaultElevation = elevation),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface,
+            contentColor = MaterialTheme.colorScheme.onSurface
+        )
+    ) {
         Column {
             NetworkImage(
                 imageUrl = vendor.headerImage,
                 contentDescription = "Image",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(LightGray)
+                modifier = Modifier.fillMaxWidth()
+                    .background(LightGray.copy(alpha = 0.3f))
                     .aspectRatio(ratio = (16 / 8).toFloat()),
             )
             VendorRowItem(vendor)
@@ -240,7 +203,7 @@ fun VendorRowCard(vendor: Vendor, modifier: Modifier = Modifier) {
 
 
 @Composable
-private fun VendorRowItem(
+internal fun VendorRowItem(
     vendor: Vendor,
     onItemClick: (Vendor) -> Unit = {},
 ) {
@@ -251,9 +214,7 @@ private fun VendorRowItem(
         modifier = Modifier.clickable { onItemClick(vendor) },
         leadingContent = {
             CircularAvatar(
-                image = vendor.logo,
-                contentDescription = vendor.name,
-                size = 60.dp
+                image = vendor.logo, contentDescription = vendor.name, size = 60.dp
             )
         },
         headlineContent = {
@@ -267,8 +228,7 @@ private fun VendorRowItem(
         },
         supportingContent = {
             Column(
-                horizontalAlignment = Alignment.Start,
-                verticalArrangement = Arrangement.Top
+                horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Top
             ) {
                 if (vendor.categories.isNotEmpty()) {
                     Text(text = vendor.categories.joinToString("·"), fontSize = 12.sp)
@@ -295,25 +255,4 @@ private fun VendorRowItem(
 }
 
 @Composable
-private fun CircularAvatar(
-    image: String,
-    contentDescription: String,
-    modifier: Modifier = Modifier,
-    size: Dp = 40.dp
-) {
-    Box(
-        modifier = modifier
-            .size(size)
-            .background(color = MaterialTheme.colorScheme.surface, shape = RectangleShape)
-            .clip(RectangleShape),
-        contentAlignment = Alignment.Center
-    ) {
-        AsyncImage(
-            model = ImageRequest.Builder(LocalPlatformContext.current)
-                .data(image).build(),
-            contentDescription = contentDescription,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.size(size),
-        )
-    }
-}
+expect fun NativeVendorItem(vendor: Vendor)

@@ -7,8 +7,9 @@ import com.santimattius.kmp.delivery.core.data.sources.VendorRemoteDataSource
 import com.santimattius.kmp.delivery.core.data.sources.ktor.KtorVendorRemoteDataSource
 import com.santimattius.kmp.delivery.core.data.sources.local.InMemoryVendorLocalDataSource
 import com.santimattius.kmp.delivery.core.network.ktorHttpClient
-import com.santimattius.kmp.delivery.features.home.HomeScreenModel
+import com.santimattius.kmp.delivery.features.home.HomeScreenViewModel
 import com.santimattius.kmp.delivery.features.map.MapViewModel
+import org.koin.compose.viewmodel.dsl.viewModelOf
 import org.koin.core.qualifier.named
 import org.koin.core.qualifier.qualifier
 import org.koin.dsl.module
@@ -39,8 +40,8 @@ val sharedModules = module {
 }
 
 val homeModule = module {
-    factory { HomeScreenModel(repository = get()) }
-    factory { MapViewModel(repository = get()) }
+    viewModelOf(::HomeScreenViewModel)
+    viewModelOf(::MapViewModel)
 }
 
 

@@ -16,7 +16,7 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_1_8.toString()
+                jvmTarget = JavaVersion.VERSION_11.toString()
             }
         }
     }
@@ -42,8 +42,6 @@ kotlin {
             api(libs.androidx.appcompat)
             api(libs.androidx.core.ktx)
 
-
-
             implementation(libs.ktor.client.okhttp)
             implementation(libs.kotlinx.coroutines.android)
 
@@ -62,8 +60,11 @@ kotlin {
             implementation(libs.coil.network)
 
             implementation(libs.stately.common)
-            implementation(libs.voyager.navigator)
-            implementation(libs.voyager.koin)
+
+            implementation(libs.lifecycle.viewmodel.compose)
+            implementation(libs.androidx.lifecycle.runtime)
+            implementation(libs.lifecycle.runtime.compose)
+            implementation(libs.navigation.compose)
 
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
@@ -73,6 +74,7 @@ kotlin {
 
             api(libs.koin.core)
             api(libs.koin.compose)
+            api(libs.koin.compose.viewModel)
 
             implementation(libs.compottie.core)
             implementation(libs.compottie.dot)
@@ -125,8 +127,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)

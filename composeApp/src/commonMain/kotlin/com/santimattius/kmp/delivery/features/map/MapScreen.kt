@@ -1,5 +1,8 @@
 package com.santimattius.kmp.delivery.features.map
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.BottomSheetDefaults
@@ -11,40 +14,31 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
-import cafe.adriel.voyager.navigator.currentOrThrow
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import cmp_delivery_application.composeapp.generated.resources.Res
 import cmp_delivery_application.composeapp.generated.resources.app_name
 import com.santimattius.kmp.delivery.core.domain.Vendor
 import com.santimattius.kmp.delivery.core.ui.components.AppBar
+import com.santimattius.kmp.delivery.core.ui.components.LoadingIndicator
 import com.santimattius.kmp.delivery.features.home.VendorRowCard
 import org.jetbrains.compose.resources.stringResource
-import org.koin.compose.koinInject
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 
-object MapScreen : Screen {
-
-    @Composable
-    override fun Content() {
-        MapScreenContent()
-    }
-}
-
+@OptIn(KoinExperimentalAPI::class)
 @Composable
-fun MapScreenContent(
-    viewModel: MapViewModel = koinInject(),
-    modifier: Modifier = Modifier
+fun MapScreen(
+    viewModel: MapViewModel = koinViewModel(),
+    modifier: Modifier = Modifier,
+    onBack: () -> Unit = {},
 ) {
 
-    val navigator = LocalNavigator.currentOrThrow
-    val vendors by viewModel.vendors.collectAsState()
     var select by remember { mutableStateOf<Vendor?>(null) }
 
     Scaffold(
@@ -55,7 +49,7 @@ fun MapScreenContent(
                 containerColor = MaterialTheme.colorScheme.background,
                 titleContentColor = Color.Black,
                 navigationIcon = {
-                    IconButton(onClick = { navigator.pop() }) {
+                    IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
                             contentDescription = null
@@ -64,7 +58,17 @@ fun MapScreenContent(
                 })
         }
     ) {
-        MapView(vendors = vendors, onItemClick = { select = it })
+        val state by viewModel.state.collectAsStateWithLifecycle()
+        Box(
+            modifier = Modifier.fillMaxSize().padding(it)
+        ) {
+            when {
+                state.isLoading -> LoadingIndicator()
+                else -> {
+                    MapView(vendors = state.data, onItemClick = { current -> select = current })
+                }
+            }
+        }
     }
 
     if (select != null) {
@@ -78,7 +82,7 @@ fun MapScreenContent(
 expect fun MapView(
     vendors: List<Vendor>,
     onItemClick: (Vendor) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 )
 
 @OptIn(ExperimentalMaterial3Api::class)

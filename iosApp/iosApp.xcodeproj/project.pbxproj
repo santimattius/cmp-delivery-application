@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		4B19789D2C03974A00472307 /* NativeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19789C2C03974A00472307 /* NativeMapView.swift */; };
+		4B5CBE9A2C7D3F3E003F715D /* NativeVendorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5CBE992C7D3F3D003F715D /* NativeVendorRow.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +20,7 @@
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		4B19789C2C03974A00472307 /* NativeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeMapView.swift; sourceTree = "<group>"; };
+		4B5CBE992C7D3F3D003F715D /* NativeVendorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVendorRow.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* kmp-compose-gradle-skeleton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kmp-compose-gradle-skeleton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
 				4B19789C2C03974A00472307 /* NativeMapView.swift */,
+				4B5CBE992C7D3F3D003F715D /* NativeVendorRow.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B19789D2C03974A00472307 /* NativeMapView.swift in Sources */,
+				4B5CBE9A2C7D3F3E003F715D /* NativeVendorRow.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
