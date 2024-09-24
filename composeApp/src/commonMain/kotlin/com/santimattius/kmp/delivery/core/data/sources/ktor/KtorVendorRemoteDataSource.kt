@@ -11,7 +11,7 @@ import io.ktor.client.request.get
 import io.ktor.client.request.headers
 
 class KtorVendorRemoteDataSource(
-    private val client: HttpClient
+    private val client: HttpClient,
 ) : VendorRemoteDataSource {
     override suspend fun getVendors(): Result<VendorResult> = runCatching {
         val response = client.get("/restaurants") {
@@ -19,13 +19,14 @@ class KtorVendorRemoteDataSource(
                 append(AVOCODE, BuildConfig.apiKey)
             }
         }
-            val body = response.body<List<VendorDto>>()
+        val body = response.body<List<VendorDto>>()
         VendorResult(
             total = body.size.toLong(),
             vendors = body.asDomains()
         )
     }
-    companion object{
+
+    companion object {
         private const val AVOCODE = "avocode"
     }
 }
