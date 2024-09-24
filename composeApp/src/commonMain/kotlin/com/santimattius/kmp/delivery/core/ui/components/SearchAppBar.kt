@@ -23,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchAppBar(
     text: String = "",
@@ -49,10 +48,17 @@ fun SearchAppBar(
                 BorderStroke(width = 1.dp, color = Color.LightGray),
                 shape = RoundedCornerShape(20)
             ),
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.Transparent,
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                disabledContainerColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
+                disabledIndicatorColor = Color.Transparent,
+                errorIndicatorColor = Color.Transparent,
+                errorLabelColor = Color.Transparent,
+                errorCursorColor = Color.Transparent,
+                errorContainerColor = Color.Transparent,
             ),
             textStyle = MaterialTheme.typography.bodyMedium,
             trailingIcon = {

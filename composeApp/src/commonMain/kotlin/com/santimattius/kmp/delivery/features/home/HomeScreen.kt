@@ -1,11 +1,11 @@
 package com.santimattius.kmp.delivery.features.home
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
@@ -63,11 +63,14 @@ fun HomeScreen(
     onOpenMap: () -> Unit = {},
 ) {
 
-    Scaffold(topBar = { SearchAppBar() }, floatingActionButton = {
-        FloatingActionButton(onClick = onOpenMap) {
-            Icon(Icons.Default.Map, contentDescription = null)
+    Scaffold(
+        topBar = { SearchAppBar() },
+        floatingActionButton = {
+            FloatingActionButton(onClick = onOpenMap) {
+                Icon(Icons.Default.Map, contentDescription = null)
+            }
         }
-    }) {
+    ) {
         val state by screenModel.state.collectAsStateWithLifecycle()
         Box(
             modifier = Modifier.fillMaxSize().padding(it),
@@ -88,7 +91,6 @@ fun HomeScreen(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun VendorList(
     total: Long,
@@ -96,12 +98,13 @@ private fun VendorList(
     onItemClick: (Vendor) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
-    var isCard by remember { mutableStateOf(true) }
+    var isCard by remember { mutableStateOf(false) }
 
     LazyColumn(
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
         modifier = modifier
     ) {
-        stickyHeader {
+        item {
             VendorHeader(
                 total = total,
                 isCard = isCard,
@@ -116,7 +119,6 @@ private fun VendorList(
                 VendorRowCard(
                     modifier = Modifier.padding(
                         vertical = 4.dp,
-                        horizontal = 16.dp,
                     ),
                     elevation = 2.dp,
                     vendor = vendor
@@ -142,7 +144,7 @@ private fun VendorList(
 
 @Composable
 private fun VendorHeader(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     total: Long,
     isCard: Boolean,
     onViewTypeClicked: () -> Unit = {},
@@ -155,15 +157,12 @@ private fun VendorHeader(
         Text(
             text = "$total restaurantes",
             style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.weight(1f).padding(
-                start = 16.dp,
-            )
+            modifier = Modifier.weight(1f)
         )
         IconButton(
             onClick = onViewTypeClicked,
             modifier = Modifier
                 .weight(0.1f)
-                .padding(end = 16.dp)
         ) {
             Icon(
                 imageVector = if (!isCard) Icons.Filled.GridView else Icons.AutoMirrored.Filled.ViewList,
