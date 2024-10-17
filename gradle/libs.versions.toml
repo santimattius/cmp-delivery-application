@@ -1,27 +1,26 @@
 [versions]
-agp = "8.6.0"
-kotlin = "2.0.10"
-compose = "1.7.2"
-compose-plugin = "1.7.0-beta02"
-skieVersion = "0.8.4"
+agp = "8.7.1"
+kotlin = "2.0.20"
+compose = "1.7.4"
+compose-plugin = "1.7.0"
+skieVersion = "0.9.3"
 
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
 
 androidx-core-ktx = "1.13.1"
-androidx-activityCompose = "1.9.2"
+androidx-activityCompose = "1.9.3"
 androidx-appcompat = "1.7.0"
 
 lifecycleRuntime = "2.8.6"
-lifecycleCompose = "2.8.0"
+lifecycleCompose = "2.8.3"
 navigationCompose = "2.8.0-alpha08"
 
 statelyCommon = "2.1.0"
 coil = "3.0.0-alpha08"
 
-koin = "3.5.6"
-koinCompose = "1.2.0-Beta5"
+koin = "4.0.0"
 
 kotlinxCoroutinesAndroid = "1.9.0"
 ktorVersion = "2.3.12"
@@ -48,8 +47,8 @@ coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" 
 coil-network = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil" }
 
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinCompose" }
-koin-compose-viewModel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinCompose" }
+koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
+koin-compose-viewModel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesAndroid" }

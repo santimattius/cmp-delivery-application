@@ -56,7 +56,6 @@ import com.santimattius.kmp.delivery.core.ui.components.SearchAppBar
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 
-@OptIn(KoinExperimentalAPI::class)
 @Composable
 fun HomeScreen(
     screenModel: HomeScreenViewModel = koinViewModel(),
@@ -124,10 +123,7 @@ private fun VendorList(
                     vendor = vendor
                 )
             } else {
-                VendorRowItem(
-                    vendor = vendor,
-                    onItemClick = onItemClick,
-                )
+                NativeVendorItem(vendor = vendor)
                 if (index < vendors.lastIndex) {
                     HorizontalDivider(
                         color = LightGray,

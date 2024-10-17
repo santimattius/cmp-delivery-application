@@ -9,16 +9,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.interop.UIKitViewController
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.UIKitInteropProperties
+import androidx.compose.ui.viewinterop.UIKitViewController
 import com.santimattius.kmp.delivery.core.domain.Vendor
 import kotlinx.cinterop.ExperimentalForeignApi
 
-@OptIn(ExperimentalForeignApi::class)
 @Composable
 actual fun NativeVendorItem(vendor: Vendor) {
     val nativeViewFactory = LocalNativeViewFactory.current
     UIKitViewController(
-        modifier = Modifier.height(100.dp).fillMaxWidth(),
         factory = { nativeViewFactory.createVendorRow(vendor) },
-        update = {}
+        modifier = Modifier.height(100.dp).fillMaxWidth(),
+        update = {},
+        properties = UIKitInteropProperties(
+            isInteractive = true,
+            isNativeAccessibilityEnabled = true
+        )
     )
 }

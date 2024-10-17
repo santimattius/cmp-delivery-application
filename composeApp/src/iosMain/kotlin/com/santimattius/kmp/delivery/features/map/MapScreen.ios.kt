@@ -6,12 +6,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.interop.UIKitViewController
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.UIKitInteropProperties
+import androidx.compose.ui.viewinterop.UIKitViewController
 import com.santimattius.kmp.delivery.core.domain.Vendor
-import kotlinx.cinterop.ExperimentalForeignApi
 
-@OptIn(ExperimentalForeignApi::class)
 @Composable
 actual fun MapView(
     vendors: List<Vendor>,
@@ -21,10 +20,14 @@ actual fun MapView(
 
     val nativeViewFactory = LocalNativeViewFactory.current
     UIKitViewController(
+        factory = { nativeViewFactory.createMapView(vendors, onItemClick) },
         modifier = Modifier
             .fillMaxSize()
             .border(1.dp, Color.Black),
-        factory = { nativeViewFactory.createMapView(vendors, onItemClick) },
-        update = {}
+        update = {},
+        properties = UIKitInteropProperties(
+            isInteractive = true,
+            isNativeAccessibilityEnabled = true
+        )
     )
 }
